@@ -5,7 +5,6 @@ package saini.fateh.com.githubtask;
  */
 
 import android.content.Context;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,19 +16,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-public class CustomOrgAdapter extends RecyclerView.Adapter<CustomOrgAdapter.MyViewHolder> {
+public class OrgDetailsAdapter extends RecyclerView.Adapter<OrgDetailsAdapter.MyViewHolder> {
 
     private final Context ctx;
     private List<OrientationModel> orgList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        private final TextView id,url;
         public TextView orgName;
         public LinearLayout orgLayout;
 
         public MyViewHolder(View view) {
             super(view);
-            orgName = (TextView) view.findViewById(R.id.org_list);
+            orgName = (TextView) view.findViewById(R.id.name);
+            id = (TextView) view.findViewById(R.id.id);
+            url = (TextView) view.findViewById(R.id.url);
             orgLayout = (LinearLayout) view.findViewById(R.id.orgLayout);
 
 
@@ -68,7 +69,7 @@ public class CustomOrgAdapter extends RecyclerView.Adapter<CustomOrgAdapter.MyVi
     }
 
 
-    public CustomOrgAdapter(ArrayList<OrientationModel> orgList, Context ctx) {
+    public OrgDetailsAdapter(ArrayList<OrientationModel> orgList, Context ctx) {
         this.orgList = orgList;
         this.ctx=ctx;
     }
@@ -76,7 +77,7 @@ public class CustomOrgAdapter extends RecyclerView.Adapter<CustomOrgAdapter.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.custom_org_item, parent, false);
+                .inflate(R.layout.org_details_item, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -85,8 +86,8 @@ public class CustomOrgAdapter extends RecyclerView.Adapter<CustomOrgAdapter.MyVi
     public void onBindViewHolder(MyViewHolder holder, int position) {
         OrientationModel items = orgList.get(position);
         holder.orgName.setText(items.getName());
-       // holder.drawer_icon.setImageResource(items.getItemId());
-        //view.getResources().getDrawable(dItem.getItemId()
+        holder.id.setText(items.getId());
+        holder.url.setText(items.getAvatar_url());
 
     }
 
