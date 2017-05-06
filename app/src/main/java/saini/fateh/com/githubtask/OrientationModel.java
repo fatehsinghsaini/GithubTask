@@ -1,10 +1,12 @@
 package saini.fateh.com.githubtask;
 
+import java.io.Serializable;
+
 /**
  * Created by fateh on 6/5/17.
  */
 
-class OrientationModel {
+class OrientationModel implements Serializable {
 
     String name;
     String id;

@@ -71,9 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 String id= jsonObject1.getString("id");
                 String avatar_url=jsonObject1.getString("avatar_url");
                 String url=jsonObject1.getString("url");
-
                 orgList.add(new OrientationModel(loginName,id,avatar_url,url));
-
 
             }
 

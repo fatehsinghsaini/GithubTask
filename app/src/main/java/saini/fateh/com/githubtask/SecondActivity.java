@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -18,15 +20,20 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        recyclerView=(RecyclerView)findViewById(R.id.orgView);
+        setContentView(R.layout.org_details_item);
 
-        ArrayList<OrientationModel> orgList=new ArrayList<>();
+        TextView orgName = (TextView) findViewById(R.id.name);
+        TextView id = (TextView) findViewById(R.id.id);
+        TextView url = (TextView) findViewById(R.id.url);
+        LinearLayout orgLayout = (LinearLayout) findViewById(R.id.orgLayout);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        CustomOrgAdapter adapter = new CustomOrgAdapter(orgList, this);
-        recyclerView.setAdapter(adapter);
+        OrientationModel items = (OrientationModel) getIntent().getSerializableExtra("mylist");
+
+        orgName.setText(items.getName());
+       id.setText(items.getId());
+        url.setText(items.getAvatar_url());
+
+
 
 
     }

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,39 +33,6 @@ public class CustomOrgAdapter extends RecyclerView.Adapter<CustomOrgAdapter.MyVi
             super(view);
             orgName = (TextView) view.findViewById(R.id.org_list);
             orgLayout = (LinearLayout) view.findViewById(R.id.orgLayout);
-
-
-
-            orgLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Intent intent=new Intent(ctx,SecondActivity.class);
-                     ctx.startActivity(intent);
-
-
-/*
-                        if (drawer.isDrawerOpen(GravityCompat.START)) {
-                            drawer.closeDrawer(GravityCompat.START);
-                    }
-
-                    int position=getAdapterPosition();
-
-                    System.out.println("product item click"+orgList.get(position).getItemId());
-                    Bundle bundle=new Bundle();
-                    bundle.putString("brand_id",orgList.get(position).getItemId());
-                    bundle.putString("latest_products_rb","0");
-                    bundle.putString("product_name",orgList.get(position).getItemName());
-
-                    FrameLayout frameLayout = (FrameLayout) ((Activity) ctx).findViewById(R.id.outer_frame);
-                    frameLayout.setVisibility(View.VISIBLE);
-                    Fragment fragment = new LatestProducts();
-                    fragment.setArguments(bundle);
-                    FragmentManager frgManager = ((Activity) ctx).getFragmentManager();
-                    frgManager.beginTransaction().replace(R.id.outer_frame, fragment).commit()*/;
-                }
-            });
-
 
 
         }
@@ -86,8 +54,19 @@ public class CustomOrgAdapter extends RecyclerView.Adapter<CustomOrgAdapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        OrientationModel items = orgList.get(position);
+        final OrientationModel items = orgList.get(position);
         holder.orgName.setText(items.getName());
+
+        holder.orgLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(ctx,SecondActivity.class);
+                intent.putExtra("mylist", items);
+                ctx.startActivity(intent);
+            }
+        });
+
 
     }
 
