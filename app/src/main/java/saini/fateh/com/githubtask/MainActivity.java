@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -21,18 +23,22 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private ProgressBar progress_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
          recyclerView=(RecyclerView)findViewById(R.id.orgView);
+        progress_bar=(ProgressBar)findViewById(R.id.progress_bar);
         syncFromServer("https://api.github.com/search/users?q=type:org");
 
 
     }
 
     public void syncFromServer(String url) {
+
+        progress_bar.setVisibility(View.VISIBLE);
         StringRequest strRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -47,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         VolleyLog.d("Error in web service by:" + error);
+                        if(progress_bar.isShown())
+                        progress_bar.setVisibility(View.GONE);
                     }
                 });
 
@@ -58,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setOrganisation(String response){
 
+        if(progress_bar.isShown())
+        progress_bar.setVisibility(View.GONE);
         try {
             JSONObject jsonObject=new JSONObject(response);
             if(Integer.parseInt(jsonObject.getString("total_count"))>0){
