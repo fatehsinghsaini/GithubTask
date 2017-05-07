@@ -8,25 +8,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:weightSum="1"
-        >
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:text="@string/user_name"
             android:layout_weight=".1"
-            />
+            android:padding="10dp"
+            android:text="@string/user_name" />
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:text="Name"
             android:layout_weight=".9"
-            />
+            android:padding="10dp"
+            android:text="Name" />
 
 
     </LinearLayout>
@@ -35,26 +32,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="1"
-        >
+        android:weightSum="1">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:text="@string/id"
             android:layout_weight=".1"
-            />
+            android:padding="10dp"
+            android:text="@string/id" />
 
         <TextView
             android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:text="id"
             android:layout_weight=".9"
-            />
+            android:padding="10dp"
+            android:text="id" />
 
     </LinearLayout>
 
@@ -62,25 +56,215 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="1"
-        >
+        android:weightSum="1">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:text="@string/url"
             android:layout_weight=".1"
-            />
+            android:padding="10dp"
+            android:text="@string/url" />
 
         <TextView
             android:id="@+id/url"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight=".9"
             android:padding="10dp"
-            android:text="Url"
-            android:layout_weight=".9"/>
+            android:text="Url" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/type" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/score" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:text="Url" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/followers_url" />
+
+        <TextView
+            android:id="@+id/followers_url"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:text="Url" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/gists_url" />
+
+        <TextView
+            android:id="@+id/gists_url"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:text="Url" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/subscriptions_url" />
+
+        <TextView
+            android:id="@+id/subscriptions_url"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:text="Url" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/organizations_url" />
+
+        <TextView
+            android:id="@+id/organizations_url"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:text="Url" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/repos_url" />
+
+        <TextView
+            android:id="@+id/repos_url"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:text="Url" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="10dp"
+            android:text="@string/events_url" />
+
+        <TextView
+            android:id="@+id/events_url"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:text="Url" />
 
     </LinearLayout>
 

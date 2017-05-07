@@ -6,6 +6,7 @@ package saini.fateh.com.githubtask;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,7 +15,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.io.Serializable;
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +64,7 @@ public class CustomOrgAdapter extends RecyclerView.Adapter<CustomOrgAdapter.MyVi
             public void onClick(View v) {
 
                 Intent intent=new Intent(ctx,SecondActivity.class);
-                intent.putExtra("mylist", items);
+                intent.putExtra(ctx.getString(R.string.bundle_name), new Gson().toJson(items));
                 ctx.startActivity(intent);
             }
         });

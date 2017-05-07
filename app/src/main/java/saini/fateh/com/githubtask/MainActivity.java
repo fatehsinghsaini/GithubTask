@@ -72,16 +72,27 @@ public class MainActivity extends AppCompatActivity {
             JSONObject jsonObject=new JSONObject(response);
             if(Integer.parseInt(jsonObject.getString("total_count"))>0){
 
-           JSONArray itemArray= (JSONArray)jsonObject.getJSONArray("items");
+           JSONArray itemArray= jsonObject.getJSONArray("items");
                 ArrayList<OrientationModel> orgList=new ArrayList<>();
             for(int i=0;i<itemArray.length();i++){
 
-                JSONObject jsonObject1=(JSONObject)itemArray.getJSONObject(i);
+
+
+                JSONObject jsonObject1=itemArray.getJSONObject(i);
                String loginName=  jsonObject1.getString("login");
                 String id= jsonObject1.getString("id");
                 String avatar_url=jsonObject1.getString("avatar_url");
+                String type=jsonObject1.getString("type");
+                String score=jsonObject1.getString("score");
                 String url=jsonObject1.getString("url");
-                orgList.add(new OrientationModel(loginName,id,avatar_url,url));
+                String followers_url=jsonObject1.getString("followers_url");
+                String gists_url=jsonObject1.getString("gists_url");
+                String subscriptions_url=jsonObject1.getString("subscriptions_url");
+                String organizations_url=jsonObject1.getString("organizations_url");
+                String repos_url=jsonObject1.getString("repos_url");
+                String events_url=jsonObject1.getString("events_url");
+
+                orgList.add(new OrientationModel(loginName,id,avatar_url,url,type,score,followers_url,gists_url,subscriptions_url,organizations_url,repos_url,events_url));
 
             }
 
