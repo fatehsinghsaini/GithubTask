@@ -2,14 +2,9 @@ package saini.fateh.com.githubtask;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-
-import java.util.ArrayList;
 
 /**
  * Created by fateh on 7/5/17.
@@ -41,7 +36,7 @@ public class SecondActivity extends AppCompatActivity {
         if (extras != null) {
             jsonMyObject = extras.getString(getString(R.string.bundle_name));
         }
-        OrientationModel items = new Gson().fromJson(jsonMyObject, OrientationModel.class);
+        organisationModel items = new Gson().fromJson(jsonMyObject, organisationModel.class);
 
         if(items!=null){
 
