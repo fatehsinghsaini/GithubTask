@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             if(Integer.parseInt(jsonObject.getString("total_count"))>0){
 
            JSONArray itemArray= jsonObject.getJSONArray("items");
-                ArrayList<OrientationModel> orgList=new ArrayList<>();
+                ArrayList<organisationModel> orgList=new ArrayList<>();
             for(int i=0;i<itemArray.length();i++){
 
 
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 String repos_url=jsonObject1.getString("repos_url");
                 String events_url=jsonObject1.getString("events_url");
 
-                orgList.add(new OrientationModel(loginName,id,avatar_url,url,type,score,followers_url,gists_url,subscriptions_url,organizations_url,repos_url,events_url));
+                orgList.add(new organisationModel(loginName,id,avatar_url,url,type,score,followers_url,gists_url,subscriptions_url,organizations_url,repos_url,events_url));
 
             }
 

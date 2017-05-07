@@ -4,7 +4,7 @@ package saini.fateh.com.githubtask;
  * Created by fateh on 6/5/17.
  */
 
-class OrientationModel {
+class organisationModel {
 
     String name;
     String id;
@@ -19,7 +19,7 @@ class OrientationModel {
     String repos_url;
     String events_url;
 
-    public OrientationModel(String name, String id, String avatar_url, String url, String type, String score
+    public organisationModel(String name, String id, String avatar_url, String url, String type, String score
             , String followers_url, String gists_url, String subscriptions_url, String organizations_url, String repos_url, String events_url) {
         this.name = name;
         this.id = id;

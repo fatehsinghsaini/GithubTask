@@ -1,24 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:baselineAligned="false"
+android:orientation="horizontal" >
+
+<fragment
+    android:id="@+id/listFragment"
+    android:layout_width="0dp"
+    android:layout_weight="1"
     android:layout_height="match_parent"
-    tools:context="saini.fateh.com.githubtask.MainActivity">
+    class="saini.fateh.com.githubtask.OrganisationFragment"
+    tools:layout="@layout/organisations_layout">
+</fragment>
+<fragment
+    android:id="@+id/detailFragment"
+    android:layout_width="0dp"
+    android:layout_weight="2"
+    android:layout_height="match_parent"
+    class="saini.fateh.com.githubtask.DetailsFragment"
+    tools:layout="@layout/org_details_item">
+</fragment>
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/orgView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-     />
-
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        />
-
-</FrameLayout>
+</LinearLayout>
